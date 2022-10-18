@@ -5,8 +5,14 @@ public class table {
     private int[] numbers = {1, 2, 3, 4, 5, 6, 7, 8};
 
     public table() {
-        this.fullMatriz();
+        this.fullMatrix();
         this.printTable();
+        System.out.println("Jugardor uno inicia.");
+        this.turnOnGame();
+    }
+
+    private void turnOnGame(){
+
     }
 
     private void printTable(){
@@ -32,10 +38,8 @@ public class table {
         }
     }
 
-    public void fullMatriz() {
-
+    private void fullMatrix() {
         for ( int i = 0; i < matrix.length; i++) {
-
             for (int j = 0; j < matrix.length; j++){
                 this.matrix[i][j] = " ";
             }
