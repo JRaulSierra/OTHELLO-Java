@@ -1,3 +1,4 @@
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Table {
@@ -6,6 +7,7 @@ public class Table {
     private String black = "X";
     private String[][] matrix = new String[8][8];
     private int[] numbers = {1, 2, 3, 4, 5, 6, 7, 8};
+    private String[] letters = {"a","b","c","d","e","f","g","j"};
     private boolean turn = true;
     private Scanner sc = new Scanner(System.in);
     public Table() {
@@ -25,16 +27,21 @@ public class Table {
         }
     }
 
+    public static int findIndex(String arr[], String t)
+    {
+
+        int index = Arrays.binarySearch(arr, t);
+        return (index < 0) ? -1 : index;
+    }
     private void fillMatrix(){
         int posX = 0;
         int posY = 0;
         try {
             System.out.println("Ingrese la posicion que desea colocar su pieza");
             System.out.println("Ingrese la posicion en la fila");
-            posX = this.sc.nextInt();
-            System.out.println("Ingrese la posicion en la columna");
-            posY = this.sc.nextInt();
-            System.out.println("----------------------->"+ this.validPosition(posX,posY));
+            posX = this.sc.nextInt() - 1;
+            System.out.println("Ingrese la letra en la columna");
+            posY = this.findIndex(this.letters,this.sc.next());
             if (this.validPosition(posX,posY)) {
                 this.matrix[posX][posY] = turn ? this.black : this.white;
                 this.turn = !this.turn;
@@ -59,6 +66,8 @@ public class Table {
     {
         boolean fullMatrix=false;
         int countTot=0;
+        int countWhite = 0;
+        int countBlack = 0;
         for (int i=0; i<8; i++)
         {
             for (int j=0; j<8; j++)
@@ -67,13 +76,24 @@ public class Table {
                 {
                     countTot++;
                 }
+                if (matrix[i][j] == this.white) countWhite++;
+                if (matrix[i][j]== this.black) countBlack++;
             }
         }
         if (countTot==64)
         {
             fullMatrix=true;
+            this.setWinner(countWhite,countBlack);
         }
         return fullMatrix;
+    }
+
+    private void setWinner(int countWhite,int countBlack){
+        if (countWhite > countBlack){
+            System.out.println("El ganador es el jugador 2");
+        }else{
+            System.out.println("El ganador es el jugador 1");
+        }
     }
 
     private void printTable(){
@@ -109,5 +129,18 @@ public class Table {
         this.matrix[4][4]=this.black;
         this.matrix[4][3]=this.white;
         this.matrix[3][4]=this.white;
+    }
+
+    private void validBorders(){
+        for ( int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix.length; j++){
+                try {
+
+                }catch (Exception e){
+                    System.out.println(e);
+                }
+                this.matrix[i][j] = " ";
+            }
+        }
     }
 }

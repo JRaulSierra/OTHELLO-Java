@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="df939670-f665-48dc-9911-1366e884f63c" name="Changes" comment="feat: set new value in a certeain position">
+    <list default="true" id="df939670-f665-48dc-9911-1366e884f63c" name="Changes" comment="feat: valid if position its not empty">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Table.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Table.java" afterDir="false" />
     </list>
@@ -50,7 +51,7 @@
       <workItem from="1666060702872" duration="66000" />
       <workItem from="1666835935325" duration="739000" />
       <workItem from="1667102637129" duration="7211000" />
-      <workItem from="1667342910358" duration="2948000" />
+      <workItem from="1667342910358" duration="5937000" />
     </task>
     <task id="LOCAL-00001" summary="asdf">
       <created>1665453038820</created>
@@ -80,7 +81,14 @@
       <option name="project" value="LOCAL" />
       <updated>1667113595694</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="feat: valid if position its not empty">
+      <created>1667355468239</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1667355468239</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -102,6 +110,7 @@
     <MESSAGE value="tabla vacia" />
     <MESSAGE value="feat: new function" />
     <MESSAGE value="feat: set new value in a certeain position" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: set new value in a certeain position" />
+    <MESSAGE value="feat: valid if position its not empty" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: valid if position its not empty" />
   </component>
 </project>
