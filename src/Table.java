@@ -34,12 +34,25 @@ public class Table {
             posX = this.sc.nextInt();
             System.out.println("Ingrese la posicion en la columna");
             posY = this.sc.nextInt();
-            this.matrix[posX][posY] = turn ? this.black : this.white;
-            this.turn = !this.turn;
+            System.out.println("----------------------->"+ this.validPosition(posX,posY));
+            if (this.validPosition(posX,posY)) {
+                this.matrix[posX][posY] = turn ? this.black : this.white;
+                this.turn = !this.turn;
+            }else{
+                System.out.println("Posicion invalida");
+            }
         }catch (Exception e){
             System.out.println("Ocurrio un Error");
         }
 
+    }
+
+    private boolean validPosition(int posX,int posY){
+        System.out.println(this.matrix[posX][posY]);
+        if (this.matrix[posX][posY] == "X" || this.matrix[posX][posY] == "Y"){
+            return false;
+        }
+        return true;
     }
 
     private boolean validGameOver()
@@ -89,11 +102,12 @@ public class Table {
     private void fullMatrix() {
         for ( int i = 0; i < matrix.length; i++) {
             for (int j = 0; j < matrix.length; j++){
-                if ((i == 3) && (j == 4)){
-                    this.matrix[i][j] = "X";
-                }
                 this.matrix[i][j] = " ";
             }
         }
+        this.matrix[3][3]=this.black;
+        this.matrix[4][4]=this.black;
+        this.matrix[4][3]=this.white;
+        this.matrix[3][4]=this.white;
     }
 }
